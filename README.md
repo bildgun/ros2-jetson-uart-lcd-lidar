@@ -108,6 +108,19 @@ ros2-jetson-uart-lcd-distance/
             ├── lcd_publisher.py
             └── lcd_subscriber.py
 ```
+
+## Demo
+
+<p align="center">
+  <img src="images/setup_connected.jpg" width="45%" />
+  <img src="images/setup_disconnected.jpg" width="45%" />
+</p>
+
+<p align="center">
+  <b>Left:</b> Sensor connected and system operating normally<br>
+  <b>Right:</b> Sensor disconnected (heartbeat mode)
+</p>
+
 ## Author
 
 Bohdan Susulovskyi  
