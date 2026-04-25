@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>py_pubsub</name>
+  <version>0.1.0</version>
+  <description>ROS2 UART distance sensor publisher and I2C LCD subscriber for NVIDIA Jetson Orin Nano</description>
+
+  <maintainer email="bsusulovskiy@gmail.com">Bohdan Susulovskyi</maintainer>
+  <license>MIT</license>
+
+  <!-- Build system -->
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- Core dependencies -->
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+
+  <!-- Runtime dependencies -->
+  <exec_depend>python3-serial</exec_depend>
+
+  <!-- Optional test deps -->
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
