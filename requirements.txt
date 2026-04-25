@@ -1,0 +1,2 @@
+pyserial
+liquidcrystal-i2c
