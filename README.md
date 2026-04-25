@@ -31,7 +31,9 @@ This project simulates a basic onboard sensor module for UAV systems.
 
 ## System architecture
 
+```
 [UART Sensor] -> [lcd_publisher] -> /lcd/text -> [lcd_subscriber] -> [I2C LCD]
+```
 
 ## ROS2 Nodes
 
@@ -40,13 +42,13 @@ This project simulates a basic onboard sensor module for UAV systems.
 Reads raw data from UART, parses frames and publishes formatted distance.
 
 Frame format:
-FF DH DL CS
+```FF DH DL CS```
 
 Distance calculation:
-distance_mm = DH * 256 + DL
+```distance_mm = DH * 256 + DL```
 
 Checksum:
-CS == (FF + DH + DL) & 0xFF
+```CS == (FF + DH + DL) & 0xFF```
 
 Example output:
 Distance:
@@ -58,6 +60,7 @@ Subscribes to /lcd/text and displays received text on a 16x2 LCD via I2C.
 
 ## Installation
 
+```bash
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 git clone https://github.com/YOUR_USERNAME/ros2-jetson-uart-lcd-distance.git
@@ -67,20 +70,25 @@ pip install -r src/ros2-jetson-uart-lcd-distance/requirements.txt
 
 colcon build
 source install/setup.bash
-
+```
 ## Run
 
+```bash
 ros2 run py_pubsub lcd_publisher
 ros2 run py_pubsub lcd_subscriber
-
+```
 Run with custom UART port:
+```bash
 ros2 run py_pubsub lcd_publisher --ros-args -p port:=/dev/ttyUSB0
+```
 
 Run with custom I2C address:
+```bash
 ros2 run py_pubsub lcd_subscriber --ros-args -p i2c_address:=39
+```
 
 ## Repository structure
-
+```
 ros2-jetson-uart-lcd-distance/
 ├── README.md
 ├── README_PL.md
@@ -101,20 +109,7 @@ ros2-jetson-uart-lcd-distance/
             ├── __init__.py
             ├── lcd_publisher.py
             └── lcd_subscriber.py
-
-## Documentation
-
-See:
-docs/Pkum.pdf
-
-## Future improvements
-
-- Add ROS2 launch file
-- Add GPS integration
-- Add camera/YOLO node
-- Add multi-sensor fusion
-- Add diagnostics topic
-
+```
 ## Author
 
 Bohdan Susulovskyi  
